@@ -14,6 +14,10 @@ Effects you can stack on any style: glow, scanlines, RGB split, glitch, CRT curv
 
 ## Features
 
+- Style browser with live previews of your own picture in every style, search, and favorites.
+- Undo/redo, hold-to-compare with the original, zoom, and a Shuffle button for random looks.
+- Settings grouped by Style, Tone, Color & backdrop, Effects and Output.
+- On phones: a swipeable style strip, a bottom action bar, and settings in a slide-up sheet.
 - Open, drag in, or paste (Ctrl/Cmd+V) any image.
 - Brightness, contrast, shadow cutoff, coverage, invert, photo colors or a single ink color.
 - Background: blurred photo, solid color, or transparent.
@@ -50,7 +54,13 @@ npm run build
   - `render.ts`: draws each style on a canvas, then applies effects.
   - `dither.ts`, `fx.ts`: pure pixel algorithms, unit tested.
   - `export.ts`: TXT and HTML export.
-- `src/ui/`, `src/App.tsx`: the React editor.
+- `src/App.tsx`: the editor layout, shortcuts and export actions.
+- `src/ui/`: editor parts.
+  - `StylesPanel.tsx`: style browser and the phone style strip.
+  - `SettingsPanel.tsx`: the settings rail and panels.
+  - `Stage.tsx`: canvas with zoom and before/after compare.
+  - `thumbnails.ts`: live style previews.
+  - `useHistory.ts`: undo/redo.
 
 See [docs/how-it-works.md](docs/how-it-works.md) for the algorithms.
 
